@@ -3,208 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bug to Boss - Submit Your Project</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: #f5f5f5;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #666;
-            font-weight: 500;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-
-        button {
-            background: #007bff;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            width: 100%;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background: #0056b3;
-        }
-
-        button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-
-        .alert {
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-            display: none;
-        }
-
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        .loading {
-            display: none;
-            text-align: center;
-            margin: 10px 0;
-            color: #666;
-        }
-    </style>
+    <title>BugToBoss - DevCode Community's Flagship Tech Event</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Submit Your Project</h1>
-        
-        <div id="successAlert" class="alert alert-success"></div>
-        <div id="errorAlert" class="alert alert-error"></div>
-        
-        <form id="submissionForm">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <a href="https://dev-code-community.github.io/bio/" target="_blank">
+                    <img src="https://dev-code-community.github.io/bio/images/logo.svg" alt="Logo" class="logo animate__animated" 
+                         onmouseover="this.classList.add('animate__rubberBand')"
+                         onmouseout="this.classList.remove('animate__rubberBand')">
+                </a>
+                <a href="#" class="navbar-brand">BugToBoss</a>
+            </div>            
+            
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#prizes">Prizes</a>
+                <a href="#faq">FAQ</a>
+                <a href="#submit" class="cta-button">Submit Project</a>
             </div>
-            
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
+        </div>
+    </nav>
+
+
+    <!-- Enhanced hero section -->
+    <section class="hero">
+        <div class="hero-content animate__animated animate__fadeIn">
+            <h1 class="floating">BugToBoss Initiative</h1>
+            <p>DevCode Community's Flagship Tech Event</p>
+            <p>Transform your coding projects into career opportunities.<br>Join 4,000+ developers in this unique 4-week showcase event.</p>
+            <a href="#submit" class="cta-button animate__animated animate__pulse animate__infinite">Submit Your Project</a>
+        </div>
+    </section>
+
+    <!-- Stats section -->
+    <section class="stats">
+        <div class="stat-item animate__animated animate__fadeIn">
+            <div class="stat-number">4,000+</div>
+            <div>Community Members</div>
+        </div>
+        <div class="stat-item animate__animated animate__fadeIn">
+            <div class="stat-number">50+</div>
+            <div>Tech Companies</div>
+        </div>
+        <div class="stat-item animate__animated animate__fadeIn">
+            <div class="stat-number">₹10,000+</div>
+            <div>In Prizes</div>
+        </div>
+        <div class="stat-item animate__animated animate__fadeIn">
+            <div class="stat-number">100+</div>
+            <div>Projects Submitted</div>
+        </div>
+    </section>
+
+    <!-- Features section -->
+    <section class="section">
+        <h2 class="section-title">Why Participate?</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>Career Growth</h3>
+                <p>Connect with industry leaders and potential employers</p>
             </div>
-            
-            <div class="form-group">
-                <label for="github_url">GitHub Project URL</label>
-                <input type="url" id="github_url" name="github_url" required 
-                       placeholder="https://github.com/username/repository">
+            <div class="feature-card">
+                <h3>Community Support</h3>
+                <p>Join a thriving community of 4,000+ developers</p>
             </div>
-            
-            <div class="form-group">
-                <label for="linkedin_url">LinkedIn Profile URL</label>
-                <input type="url" id="linkedin_url" name="linkedin_url" required
-                       placeholder="https://www.linkedin.com/in/username">
+            <div class="feature-card">
+                <h3>Learning Opportunity</h3>
+                <p>Get feedback from experienced professionals</p>
             </div>
-            
-            <div class="form-group">
-                <label for="twitter_url">Twitter Profile URL</label>
-                <input type="url" id="twitter_url" name="twitter_url" required
-                       placeholder="https://twitter.com/username">
+        </div>
+    </section>
+
+    <!-- Previous timeline section -->
+    <section class="section">
+        <h2 class="section-title">Event Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item animate__animated animate__fadeInLeft">
+                <div class="timeline-content">
+                    <div class="timeline-date">February 14, 2025</div>
+                    <h3>Event Kickoff</h3>
+                    <p>First week of project submissions begins</p>
+                </div>
             </div>
+            <div class="timeline-item animate__animated animate__fadeInRight">
+                <div class="timeline-content">
+                    <div class="timeline-date">February 21, 2025</div>
+                    <h3>Week 2</h3>
+                    <p>Second round of project showcases</p>
+                </div>
+            </div>
+            <div class="timeline-item animate__animated animate__fadeInLeft">
+                <div class="timeline-content">
+                    <div class="timeline-date">March 7, 2025</div>
+                    <h3>Final Submissions</h3>
+                    <p>Last day to submit your projects</p>
+                </div>
+            </div>
+            <div class="timeline-item animate__animated animate__fadeInRight">
+                <div class="timeline-content">
+                    <div class="timeline-date">March 10, 2025</div>
+                    <h3>Winners Announcement</h3>
+                    <p>Top projects will be announced</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Previous prizes section -->
+    <section class="section">
+        <h2 class="section-title">Prizes</h2>
+        <div class="prizes">
+            <div class="prize-card animate__animated animate__fadeInUp">
+                <h3>1st Prize</h3>
+                <div class="prize-amount">₹1000</div>
+                <p>Cash reward + Industry recognition</p>
+            </div>
+            <div class="prize-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <h3>2nd Prize</h3>
+                <div class="prize-amount">Coming Soon</div>
+                <p>To be announced</p>
+            </div>
+            <div class="prize-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                <h3>3rd Prize</h3>
+                <div class="prize-amount">Coming Soon</div>
+                <p>To be announced</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-question">
+                    Who can participate?
+                </div>
+                <div class="faq-answer">
+                    Anyone passionate about technology can participate! Whether you're a student, professional, or self-taught developer, BugToBoss welcomes all skill levels.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What types of projects are accepted?
+                </div>
+                <div class="faq-answer">
+                    We accept projects from various domains including web development, mobile apps, AI/ML, blockchain, IoT, and more. The project should be original and created by you.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How are projects evaluated?
+                </div>
+                <div class="faq-answer">
+                    Projects are evaluated based on innovation, technical complexity, social impact, and community engagement. Our panel of industry experts will review each submission.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community section -->
+    <section class="community-section">
+        <div class="background-grid"></div>
+        <div class="community-content">
+            <h2 class="section-title animate__animated animate__fadeIn">About DevCode Community</h2>
             
-            <button type="submit" id="submitButton">Submit Project</button>
-        </form>
-        
-        <div id="loading" class="loading">Submitting your project...</div>
-    </div>
+            <p class="community-description animate__animated animate__fadeIn animate__delay-1s">
+                DevCode Community is a thriving ecosystem of developers, tech enthusiasts, and industry professionals. 
+                We're committed to fostering innovation and helping developers grow in their careers through collaboration, 
+                learning, and meaningful connections.
+            </p>
 
-    <script>
-        const form = document.getElementById('submissionForm');
-        const submitButton = document.getElementById('submitButton');
-        const loadingDiv = document.getElementById('loading');
-        const successAlert = document.getElementById('successAlert');
-        const errorAlert = document.getElementById('errorAlert');
+            <div class="stats-container animate__animated animate__fadeIn animate__delay-2s">
+                <div class="stat-item">
+                    <div class="stat-number">4,000+</div>
+                    <div class="stat-label">Community Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Projects Created</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Events Hosted</div>
+                </div>
+            </div>
 
-        // Updated API URL
-        const API_URL = 'https://bugtoboss-atharvaawatades-projects.vercel.app/api/submit';
+            <div class="logo-container animate__animated animate__fadeIn animate__delay-3s">
+                <img src="https://dev-code-community.github.io/bio/images/logo.svg" alt="DevCode Logo" class="community-logo">
+            </div>
 
-        function showAlert(element, message) {
-            element.style.display = 'block';
-            element.textContent = message;
-            setTimeout(() => {
-                element.style.display = 'none';
-            }, 5000);
-        }
+            <a href="https://dev-code-community.github.io/bio/" target="_blank" class="join-button animate__animated animate__fadeIn animate__delay-4s">
+                Join Dev Code Community Now!
+            </a>
+        </div>
+    </section>
 
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    
+    <section id="submit" class="section">
+        <h2 class="section-title">Submit Your Project</h2>
+        <div class="form-container">
+            <div id="successAlert" class="alert alert-success"></div>
+            <div id="errorAlert" class="alert alert-error"></div>
             
-            successAlert.style.display = 'none';
-            errorAlert.style.display = 'none';
+            <form id="submissionForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="github_url">GitHub Project URL</label>
+                    <input type="url" id="github_url" name="github_url" required 
+                           placeholder="https://github.com/username/repository">
+                </div>
+                
+                <div class="form-group">
+                    <label for="linkedin_url">LinkedIn Profile URL</label>
+                    <input type="url" id="linkedin_url" name="linkedin_url" required
+                           placeholder="https://www.linkedin.com/in/username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="twitter_url">Twitter Profile URL</label>
+                    <input type="url" id="twitter_url" name="twitter_url" required
+                           placeholder="https://twitter.com/username">
+                </div>
+                
+                <button type="submit" id="submitButton" class="cta-button" style="width: 100%;">Submit Project</button>
+            </form>
             
-            loadingDiv.style.display = 'block';
-            submitButton.disabled = true;
+            <div id="loading" class="loading">Submitting your project...</div>
+        </div>
+    </section>
 
-            try {
-                const formData = {
-                    name: form.name.value,
-                    email: form.email.value,
-                    github_url: form.github_url.value,
-                    linkedin_url: form.linkedin_url.value,
-                    twitter_url: form.twitter_url.value
-                };
-
-                const response = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    showAlert(successAlert, 'Project submitted successfully!');
-                    form.reset();
-                } else {
-                    showAlert(errorAlert, data.detail || 'Failed to submit project');
-                }
-            } catch (error) {
-                showAlert(errorAlert, 'Network error. Please try again.');
-            } finally {
-                loadingDiv.style.display = 'none';
-                submitButton.disabled = false;
-            }
-        });
-    </script>
+    <footer class="footer">
+        <p>© 2025 DevCode Community. All rights reserved.</p>
+    </footer>
+    <script src="./app.js"></script>
 </body>
 </html>
