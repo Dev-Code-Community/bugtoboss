@@ -63,169 +63,62 @@ const CONFIG = {
   };
   
   // Form handling
-
-  // Form handling
-const setupForm = () => {
-  const form = document.getElementById('submissionForm');
-  const elements = {
-    submitButton: document.getElementById('submitButton'),
-    loading: document.getElementById('loading'),
-    successAlert: document.getElementById('successAlert'),
-    errorAlert: document.getElementById('errorAlert')
-  };
-
-  if (!form || !Object.values(elements).every(Boolean)) return;
-
-  const showAlert = (element, message) => {
-    element.style.display = 'block';
-    element.textContent = message;
-    setTimeout(() => {
-      element.style.display = 'none';
-    }, CONFIG.API.ALERT_DURATION);
-  };
-
-  // Handle button animation and form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Get the form fields
-    const name = form.querySelector("#name");
-    const emailAdress = form.querySelector("#email");
-    const text = form.querySelector("#textArea");
-
-    // Simple email validation
-    const emailPattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-
-    // Validation checks
-    if (name.value == "" || (/\d/.test(name.value))) {
-      swal("Error !", "Please enter a valid name !", "error");
-      return;
-    } else if (emailAdress.value == "" || !(emailPattern.test(emailAdress.value))) {
-      swal("Error !", "Please enter a valid email !", "error");
-      return;
-    } else if (text.value == "") {
-      swal("Error !", "Please enter a valid message !", "error");
-      return;
-    }
-
-    // If all validation passed, apply animation and handle submission
-    elements.successAlert.style.display = 'none';
-    elements.errorAlert.style.display = 'none';
-    elements.loading.style.display = 'block';
-    elements.submitButton.disabled = true;
-
-    // Button animation: changing text and adding animation classes
-    setTimeout(() => {
-      elements.submitButton.classList.add("launching");
-      elements.submitButton.textContent = "Sending";
-      elements.submitButton.classList.add("launching");
-    }, 0);
-
-    setTimeout(() => {
-      elements.submitButton.classList.add("launched");
-      elements.submitButton.textContent = "SENT";
-      elements.submitButton.classList.add("launched");
-    }, 1500);
-
-    try {
-      // Collect form data
-      const formData = ['name', 'email', 'github_url', 'linkedin_url', 'twitter_url']
-        .reduce((acc, field) => ({ ...acc, [field]: form[field].value }), {});
-
-      // API call
-      const response = await fetch(CONFIG.API.URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        showAlert(elements.successAlert, 'Project submitted successfully!');
-        form.reset();
-      } else {
-        showAlert(elements.errorAlert, data.detail || 'Failed to submit project');
-      }
-    } catch (error) {
-      showAlert(elements.errorAlert, 'Network error. Please try again.');
-    } finally {
-      elements.loading.style.display = 'none';
-      elements.submitButton.disabled = false;
-      // Reset button text after animation
+  const setupForm = () => {
+    const form = document.getElementById('submissionForm');
+    const elements = {
+      submitButton: document.getElementById('submitButton'),
+      loading: document.getElementById('loading'),
+      successAlert: document.getElementById('successAlert'),
+      errorAlert: document.getElementById('errorAlert')
+    };
+  
+    if (!form || !Object.values(elements).every(Boolean)) return;
+  
+    const showAlert = (element, message) => {
+      element.style.display = 'block';
+      element.textContent = message;
       setTimeout(() => {
-        elements.submitButton.textContent = "Submit";
-        elements.submitButton.classList.remove("launched");
-        elements.submitButton.classList.remove("launching");
-      }, 2200);  // Reset after the animation
-    }
-  };
-
-  form.addEventListener('submit', handleSubmit);
-};
-
-// Call the setup function after the DOM is ready
-document.addEventListener("DOMContentLoaded", setupForm);
-
+        element.style.display = 'none';
+      }, CONFIG.API.ALERT_DURATION);
+    };
   
-  // const setupForm = () => {
-  //   const form = document.getElementById('submissionForm');
-  //   const elements = {
-  //     submitButton: document.getElementById('submitButton'),
-  //     loading: document.getElementById('loading'),
-  //     successAlert: document.getElementById('successAlert'),
-  //     errorAlert: document.getElementById('errorAlert')
-  //   };
-  
-  //   if (!form || !Object.values(elements).every(Boolean)) return;
-  
-  //   const showAlert = (element, message) => {
-  //     element.style.display = 'block';
-  //     element.textContent = message;
-  //     setTimeout(() => {
-  //       element.style.display = 'none';
-  //     }, CONFIG.API.ALERT_DURATION);
-  //   };
-  
-  //   const handleSubmit = async (e) => {
-  //     e.preventDefault();
+    const handleSubmit = async (e) => {
+      e.preventDefault();
       
-  //     elements.successAlert.style.display = 'none';
-  //     elements.errorAlert.style.display = 'none';
-  //     elements.loading.style.display = 'block';
-  //     elements.submitButton.disabled = true;
+      elements.successAlert.style.display = 'none';
+      elements.errorAlert.style.display = 'none';
+      elements.loading.style.display = 'block';
+      elements.submitButton.disabled = true;
   
-  //     try {
-  //       const formData = ['name', 'email', 'github_url', 'linkedin_url', 'twitter_url']
-  //         .reduce((acc, field) => ({ ...acc, [field]: form[field].value }), {});
+      try {
+        const formData = ['name', 'email', 'github_url', 'linkedin_url', 'twitter_url']
+          .reduce((acc, field) => ({ ...acc, [field]: form[field].value }), {});
   
-  //       const response = await fetch(CONFIG.API.URL, {
-  //         method: 'POST',
-  //         headers: { 'Content-Type': 'application/json' },
-  //         body: JSON.stringify(formData)
-  //       });
+        const response = await fetch(CONFIG.API.URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
   
-  //       const data = await response.json();
+        const data = await response.json();
   
-  //       if (response.ok) {
-  //         showAlert(elements.successAlert, 'Project submitted successfully!');
-  //         form.reset();
-  //       } else {
-  //         showAlert(elements.errorAlert, data.detail || 'Failed to submit project');
-  //       }
-  //     } catch (error) {
-  //       showAlert(elements.errorAlert, 'Network error. Please try again.');
-  //     } finally {
-  //       elements.loading.style.display = 'none';
-  //       elements.submitButton.disabled = false;
-  //     }
-  //   };
+        if (response.ok) {
+          showAlert(elements.successAlert, 'Project submitted successfully!');
+          form.reset();
+        } else {
+          showAlert(elements.errorAlert, data.detail || 'Failed to submit project');
+        }
+      } catch (error) {
+        showAlert(elements.errorAlert, 'Network error. Please try again.');
+      } finally {
+        elements.loading.style.display = 'none';
+        elements.submitButton.disabled = false;
+      }
+    };
   
-  //   form.addEventListener('submit', handleSubmit);
-  // };
+    form.addEventListener('submit', handleSubmit);
+  };
   
-
-
   // FAQ handling
   const setupFAQ = () => {
     document.querySelectorAll('.faq-question').forEach(question => {
