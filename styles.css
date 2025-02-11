@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 :root {
     --primary: #3498db;
     --primary-dark: #2980b9;
@@ -31,9 +34,10 @@ html {
 }
 
 body {
+    font-family: 'JetBrains Mono', monospace;
     background: black;
     color: var(--light);
-    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    /* font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif; */
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
@@ -52,15 +56,20 @@ body {
 }
 
 @keyframes bugMove {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(0, 0) rotate(0deg) scale(1);
     }
+
     25% {
         transform: translate(100px, 50px) rotate(90deg) scale(1.2);
     }
+
     50% {
         transform: translate(0, 100px) rotate(180deg) scale(1);
     }
+
     75% {
         transform: translate(-100px, 50px) rotate(270deg) scale(1.2);
     }
@@ -118,6 +127,14 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-right: 0;
+}
+
+.logo-container-1 {
+    display: flex;
+    align-items: left;
     margin: 0;
     padding: 0;
     margin-right: 0;
@@ -235,7 +252,7 @@ body {
     margin: 1rem 0;
 }
 
-/* Enhanced Form Styles */
+/* Form Styles */
 .form-container {
     max-width: 600px;
     margin: var(--spacing-xl) auto;
@@ -251,6 +268,7 @@ body {
 }
 
 input {
+    font-family: 'JetBrains Mono', monospace;
     width: 100%;
     padding: var(--spacing-md);
     background: rgba(255, 255, 255, 0.1);
@@ -261,6 +279,7 @@ input {
 }
 
 input:focus {
+    font-family: 'JetBrains Mono', monospace;
     outline: none;
     border-color: var(--primary);
     background: rgba(255, 255, 255, 0.15);
@@ -298,29 +317,39 @@ input:focus {
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 15rem; 
+        padding-top: 15rem;
     }
+
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .timeline::before {
         left: 0;
     }
-    
+
     .timeline-item {
         width: 100%;
         left: 0 !important;
     }
 }
+
 .floating {
     animation: floating 3s ease-in-out infinite;
 }
 
 @keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .features {
@@ -429,7 +458,13 @@ input:focus {
 }
 
 .logo-container {
-    margin: 3rem auto;
+    margin: 2rem auto;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.logo-container-1 {
+    margin: 2rem;
     max-width: 300px;
     transition: transform 0.3s ease;
 }
@@ -489,7 +524,7 @@ input:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
+    background-image:
         linear-gradient(rgba(52, 152, 219, 0.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(52, 152, 219, 0.1) 1px, transparent 1px);
     background-size: 30px 30px;
@@ -499,13 +534,25 @@ input:focus {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 @keyframes grid-move {
-    0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
-    100% { transform: perspective(500px) rotateX(60deg) translateY(30px); }
+    0% {
+        transform: perspective(500px) rotateX(60deg) translateY(0);
+    }
+
+    100% {
+        transform: perspective(500px) rotateX(60deg) translateY(30px);
+    }
 }
 
 @media (max-width: 768px) {
@@ -529,6 +576,9 @@ input:focus {
     .logo-container {
         max-width: 200px;
     }
+    .logo-container-1 {
+        max-width: 200px;
+    }
 }
 
 .particle {
@@ -544,66 +594,70 @@ input:focus {
         transform: translate(0, 0);
         opacity: 1;
     }
+
     100% {
         transform: translate(var(--x), var(--y));
         opacity: 0;
     }
 }
+
 .cube {
-width: 100px;
-height: 100px;
-position: absolute;
-transform-style: preserve-3d;
-animation: rotate 20s infinite linear;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
 }
 
 .cube div {
-position: absolute;
-width: 100px;
-height: 100px;
-background: rgba(0, 123, 255, 0.1);
-border: 2px solid var(--primary);
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 123, 255, 0.1);
+    border: 2px solid var(--primary);
 }
 
 @keyframes rotate {
-from { transform: rotateX(0) rotateY(0) rotateZ(0); }
-to { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+    from {
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
 }
 
 .terminal-text {
-overflow: hidden;
-border-right: .15em solid var(--primary);
-white-space: nowrap;
-animation: typing 3.5s steps(40, end),
-     blink-caret .75s step-end infinite;
+    overflow: hidden;
+    border-right: .15em solid var(--primary);
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
 }
 
 
 .glitch {
-position: relative;
+    position: relative;
 }
 
 .glitch::before,
 .glitch::after {
-content: attr(data-text);
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .glitch::before {
-left: 2px;
-text-shadow: -2px 0 #ff00c1;
-clip: rect(44px, 450px, 56px, 0);
-animation: glitch-anim 5s infinite linear alternate-reverse;
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
 }
 
-.navbar-logo {
-height: 40px;
-margin-right: 15px;
-}
+
 
 /* Loading Animation */
 .loading {
@@ -618,16 +672,23 @@ margin-right: 15px;
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
 
 .navbar {
-    background: rgba(0, 0, 0, 0.95);
+    background: transparent;
     padding: 0;
     position: fixed;
-    width: 100%;
+    width: 100% !important;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
@@ -635,7 +696,7 @@ margin-right: 15px;
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -645,6 +706,12 @@ margin-right: 15px;
 .logo-container {
     display: flex;
     align-items: center;
+    gap: 1rem;
+}
+
+.logo-container-1 {
+    display: flex;
+    align-items: left;
     gap: 1rem;
 }
 
@@ -678,18 +745,32 @@ margin-right: 15px;
 }
 
 .cta-button {
-    background-color: var(--primary);
+    width: 100%;
+    padding: 10px;
+    background: #3498db;
+    border: none;
+    border-radius: 23px;
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 .cta-button:hover {
-    background-color: var(--primary-light);
+    background: #023a5f;
 }
+
+.cta-button.launching {
+    background: #1e5072;
+    color: white;
+    pointer-events: none;
+}
+
+.cta-button.launched {
+    background: #4CAF50;
+    color: white;
+}
+
 
 .hamburger {
     display: none;
@@ -706,6 +787,7 @@ margin-right: 15px;
     background-color: white;
     margin: 5px 0;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -743,5 +825,3 @@ margin-right: 15px;
         transform: rotate(-45deg) translate(7px, -5px);
     }
 }
-
-

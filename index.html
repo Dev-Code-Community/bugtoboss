@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BugToBoss - DevCode Community's Flagship Tech Event</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo-container">
+            <div class="logo-container-1">
                 <a href="https://dev-code-community.github.io/bio/" target="_blank">
                     <img src="https://dev-code-community.github.io/bio/images/logo.svg" alt="Logo" class="logo animate__animated" 
                          onmouseover="this.classList.add('animate__rubberBand')"
                          onmouseout="this.classList.remove('animate__rubberBand')">
                 </a>
-                <a href="#" class="navbar-brand">BugToBoss</a>
+                <a href="bugtoboss-devcode.vercel.app" class="navbar-brand animate__animated"
+                onmouseover="this.classList.add('animate__rubberBand')"
+                onmouseout="this.classList.remove('animate__rubberBand')">BugToBoss</a>
             </div>            
             
             <button class="hamburger">
@@ -41,7 +43,7 @@
         <div class="hero-content animate__animated animate__fadeIn">
             <h1 class="floating">BugToBoss Initiative</h1>
             <p>DevCode Community's Flagship Tech Event</p>
-            <p>Transform your coding projects into career opportunities.<br>Join 4,000+ developers in this unique 4-week showcase event.</p>
+            <p>Transform your coding projects into career opportunities.⚒️<br>Join 4,000+ developers in this unique 4-week showcase event.</p>
             <a href="#submit" class="cta-button animate__animated animate__pulse animate__infinite">Submit Your Project</a>
         </div>
     </section>
@@ -86,7 +88,7 @@
     </section>
 
     <!-- Previous timeline section -->
-    <section class="section">
+    <section id="timeline" class="section">
         <h2 class="section-title">Event Timeline</h2>
         <div class="timeline">
             <div class="timeline-item animate__animated animate__fadeInLeft">
@@ -122,22 +124,23 @@
 
 
     <!-- Previous prizes section -->
-    <section class="section">
-        <h2 class="section-title">Prizes</h2>
+    <section id="prizes" class="section">
+        <h2 class="section-title">Prizes
+            🏆</h2>
         <div class="prizes">
             <div class="prize-card animate__animated animate__fadeInUp">
-                <h3>1st Prize</h3>
-                <div class="prize-amount">₹1000</div>
+                <h3>1st Prize 🥇</h3>
+                <div class="prize-amount">₹TBD💰</div>
                 <p>Cash reward + Industry recognition</p>
             </div>
             <div class="prize-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
-                <h3>2nd Prize</h3>
-                <div class="prize-amount">Coming Soon</div>
+                <h3>2nd Prize 🥈</h3>
+                <div class="prize-amount">TBD💸</div>
                 <p>To be announced</p>
             </div>
             <div class="prize-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
-                <h3>3rd Prize</h3>
-                <div class="prize-amount">Coming Soon</div>
+                <h3>3rd Prize 🥉</h3>
+                <div class="prize-amount">TBD💸</div>
                 <p>To be announced</p>
             </div>
         </div>
@@ -146,7 +149,7 @@
 
     <!-- FAQ Section -->
     <section id="faq" class="section">
-        <h2 class="section-title">Frequently Asked Questions</h2>
+        <h2 class="section-title">Frequently Asked Questions ❔</h2>
         <div class="faq">
             <div class="faq-item">
                 <div class="faq-question">
@@ -176,7 +179,7 @@
     </section>
 
     <!-- Community section -->
-    <section class="community-section">
+    <section id="about" class="community-section">
         <div class="background-grid"></div>
         <div class="community-content">
             <h2 class="section-title animate__animated animate__fadeIn">About DevCode Community</h2>
@@ -218,45 +221,46 @@
         <div class="form-container">
             <div id="successAlert" class="alert alert-success"></div>
             <div id="errorAlert" class="alert alert-error"></div>
-            
+    
             <form id="submissionForm">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" required>
                 </div>
-                
+    
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                
+    
                 <div class="form-group">
                     <label for="github_url">GitHub Project URL</label>
                     <input type="url" id="github_url" name="github_url" required 
                            placeholder="https://github.com/username/repository">
                 </div>
-                
+    
                 <div class="form-group">
                     <label for="linkedin_url">LinkedIn Profile URL</label>
                     <input type="url" id="linkedin_url" name="linkedin_url" required
                            placeholder="https://www.linkedin.com/in/username">
                 </div>
-                
+    
                 <div class="form-group">
                     <label for="twitter_url">Twitter Profile URL</label>
                     <input type="url" id="twitter_url" name="twitter_url" required
                            placeholder="https://twitter.com/username">
                 </div>
-                
-                <button type="submit" id="submitButton" class="cta-button" style="width: 100%;">Submit Project</button>
+    
+                <button type="submit" id="submitButton" class="cta-button">Submit Project</button>
             </form>
-            
+    
             <div id="loading" class="loading">Submitting your project...</div>
         </div>
     </section>
+    
 
     <footer class="footer">
-        <p>© 2025 DevCode Community. All rights reserved.</p>
+        <p>made with ❤️ © 2025 DevCode Community. All rights reserved.</p>
     </footer>
     <script src="app.js"></script>
 </body>
