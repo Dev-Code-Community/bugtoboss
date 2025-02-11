@@ -35,7 +35,7 @@ html {
 
 body {
     font-family: 'JetBrains Mono', monospace;
-    background: black;
+    background: linear-gradient(135deg, #000000 0%, #170034 100%);
     color: var(--light);
     /* font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif; */
     line-height: 1.6;
@@ -83,7 +83,7 @@ body {
     justify-content: center;
     padding: var(--spacing-xl) var(--spacing-lg);
     position: relative;
-    background: var(--gradient-dark);
+    background: linear-gradient(135deg, #000000 0%, #170034 100%);
     overflow: hidden;
 }
 
@@ -380,7 +380,6 @@ input:focus {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     padding: 4rem 2rem;
-    background: linear-gradient(45deg, #007bff22, #00ff8822);
 }
 
 .stat-item {
@@ -428,7 +427,6 @@ input:focus {
 }
 
 .community-section {
-    background: linear-gradient(180deg, #0a0a0a, #1a1a1a);
     padding: 6rem 2rem;
     text-align: center;
     position: relative;
@@ -747,7 +745,7 @@ input:focus {
 .cta-button {
     width: 100%;
     padding: 10px;
-    background: #3498db;
+    background: #20619e;
     border: none;
     border-radius: 23px;
     color: white;
@@ -823,5 +821,118 @@ input:focus {
 
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -5px);
+    }
+}
+
+.collab-section {
+    padding: 4rem 2rem;
+}
+
+.collab-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.collab-card {
+    background: rgb(165, 165, 165);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.collab-card:hover {
+    transform: translateY(-5px);
+}
+
+.collab-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.collab-card h3 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.collab-card p {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.benefit-list li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #4a5568;
+}
+
+.benefit-list li:before {
+    content: "✓";
+    color: #48bb78;
+    position: absolute;
+    left: 0;
+}
+
+.collab-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #20619e;
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    font-weight: 600;
+}
+
+.collab-button:hover {
+    background: #174d82;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: #20619e;
+    transition: background 0.3s ease;
+}
+
+.contact-link:hover {
+    background: #174d82;
+}
+
+@media (max-width: 768px) {
+    .collab-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .collab-card {
+        margin: 1rem 0;
     }
 }

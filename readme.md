@@ -60,13 +60,13 @@ Web apps, AI/ML models, mobile apps, DevOps tools, scripts – **ANYTHING TECH!*
 👥 **4,000+ devs** | 📦 **100+ projects built** | 🎤 **50+ events hosted**  
 
 🌍 **Join the Movement:**  
-🔗 [Discord](#) | 🔗 [LinkedIn](#) | 🔗 [Twitter](#)  
+🔗 [[join DevCode Community](https://dev-code-community.github.io/bio/)]
 
 ---
 
 ## 🤝 Want to Sponsor or Collaborate?
 We’re open to **partnerships, sponsorships & tech collaborations**!   
-📩 **Contact us at:** devcode@community.com  
+📩 **Contact us at:** devcode.community@gmail.com  
 
 ---
 
